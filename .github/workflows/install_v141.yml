@@ -16,6 +16,7 @@ jobs:
     - name: Install Visual Studio toolset
       shell: cmd
       run: |
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\setup.exe" modify --quiet --includeRecommended --add Microsoft.VisualStudio.Component.VC.v141.x86.x64
+        mkdir C:\vsupdate
+        "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\setup.exe" modify --installPath C:\vsupdate --channelId VisualStudio.15.Release --quiet --includeRecommended --add Microsoft.VisualStudio.Component.VC.v141.x86.x64
         dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\"
         dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Redist\MSVC\"
