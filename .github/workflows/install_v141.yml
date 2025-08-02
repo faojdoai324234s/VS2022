@@ -17,14 +17,12 @@ jobs:
     - name: Install Visual Studio toolset via winget
       shell: cmd
       run: |
-        winget.exe install ^
-        --id Microsoft.VisualStudio.2017.BuildTools ^
-        --override '--passive --wait ^
-        --add Microsoft.VisualStudio.Workload.VCTools ^
-        --add Microsoft.VisualStudio.Component.VC.ATL ^
-        --includeRecommended
-        dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\"
-        dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Redist\MSVC\"
+        winget.exe install `
+        --id Microsoft.VisualStudio.2022.BuildTools `
+        --override '--passive --wait `
+        --add Microsoft.VisualStudio.Workload.VCTools `
+        --add Microsoft.VisualStudio.Component.VC.ATL `
+        --includeRecommended'
         
     - name: Install Visual Studio toolset
       shell: cmd
