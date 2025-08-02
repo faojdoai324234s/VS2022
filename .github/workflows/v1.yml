@@ -16,4 +16,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Install Visual Studio toolset
       shell: cmd
-      run: VS2017/vs_enterprise.exe --layout C:\VSLayout --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --lang en-US
+      run: |
+        cd VS2017
+        vs_enterprise.exe --layout C:\VSLayout --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --lang en-US
