@@ -13,17 +13,6 @@ jobs:
     runs-on: windows-2022
 
     steps:
-    - uses: Cyberboss/install-winget@v1
-    - name: Install Visual Studio toolset via winget
-      shell: cmd
-      run: |
-        winget.exe install `
-        --id Microsoft.VisualStudio.2022.BuildTools `
-        --override '--passive --wait `
-        --add Microsoft.VisualStudio.Workload.VCTools `
-        --add Microsoft.VisualStudio.Component.VC.ATL `
-        --includeRecommended'
-        
     - name: Install Visual Studio toolset
       shell: cmd
       run: |
