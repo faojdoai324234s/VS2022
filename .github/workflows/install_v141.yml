@@ -16,10 +16,6 @@ jobs:
     - name: Install Visual Studio toolset
       shell: cmd
       run: |
-        dir "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer" /s
-        "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\setup.exe" modify --quiet --includeRecommended ^
-        --productId Microsoft.VisualStudio.Product.Enterprise ^
-        --channelId VisualStudio.15.Release ^
-        --add Microsoft.VisualStudio.Workload.NativeDesktop
+        "%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\setup.exe" modify --quiet --includeRecommended --add Microsoft.VisualStudio.Workload.NativeDesktop
         dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\"
         dir "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Redist\MSVC\"
