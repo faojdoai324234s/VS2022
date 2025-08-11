@@ -1,0 +1,27 @@
+name: Windows Runner
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  openssl_location: C:\Program Files\OpenSSL
+  
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Download OpenSSL
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenSSL
+          path: ${{ env.openssl_location }}
+          if-no-files-found: ignore
+          include-hidden-files: true
+          retention-days: 0
