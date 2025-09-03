@@ -20,7 +20,7 @@ jobs:
         mkdir c:\localVSlayout
         
     - name: Download Visual Studio
-      working-directory: "${{github.workspace}}/VS2022 17.6 LTSC"
+      working-directory: ${{github.workspace}}/VS2022 17.6 LTSC
       shell: cmd
       run: |
         dir
