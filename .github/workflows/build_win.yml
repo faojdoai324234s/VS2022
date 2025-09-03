@@ -23,6 +23,7 @@ jobs:
       working-directory: "${{github.workspace}}/VS2022 17.6 LTSC"
       shell: cmd
       run: |
+        dir
         vs_enterprise.exe --help
 
     - name: List directories
