@@ -1,0 +1,31 @@
+name: Install VS2022 17.6 LTSC
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create folder structure
+      shell: cmd
+      run: |
+        mkdir c:\localVSlayout
+        
+    - name: Download Visual Studio
+      working-directory: ${{github.workspace}}/VS2022 17.6 LTSC
+      shell: cmd
+      run: |
+        vs_enterprise.exe --layout c:\localVSlayout --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --includeOptional --lang en-US
+
+    - name: List directories
+      shell: cmd
+      run: |
+        dir "c:\localVSlayout"
