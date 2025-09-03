@@ -23,8 +23,7 @@ jobs:
       working-directory: ${{github.workspace}}/VS2022 17.6 LTSC
       shell: cmd
       run: |
-        dir
-        vs_enterprise.exe --help
+        vs_enterprise.exe --layout c:\localVSlayout --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --includeOptional --lang en-US
 
     - name: List directories
       shell: cmd
